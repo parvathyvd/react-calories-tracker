@@ -62,10 +62,9 @@ const AppInputs = () => {
           <button className="btn-add">Add Meal</button>
         </form>
       </div>
-      {meals.length > 0 &&
-        meals.map((meal) => {
-          return <MealList meal={meal} key={meal.id} />;
-        })}
+      {meals.map((meal) => {
+        return <MealList meal={meal} key={meal.id} />;
+      })}
     </>
   );
 };
