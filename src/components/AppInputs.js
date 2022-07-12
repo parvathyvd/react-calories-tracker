@@ -22,13 +22,14 @@ const AppInputs = () => {
     }
 
     const oldMeals = [...meals];
+    console.log("old meal is", oldMeals);
     const meal = {
       id: new Date().getMilliseconds(),
       mealName,
       calories,
     };
     const newMeal = oldMeals.concat(meal);
-    console.log("meal is", newMeal);
+    console.log("new meal is", newMeal);
     setMeals(newMeal);
     //Add meals to the local Storage
     localStorage.setItem("meals", JSON.stringify(newMeal));
@@ -61,9 +62,9 @@ const AppInputs = () => {
           <button className="btn-add">Add Meal</button>
         </form>
       </div>
-      {meals &&
+      {meals.length > 0 &&
         meals.map((meal) => {
-          return <MealList meal={meal} />;
+          return <MealList meal={meal} key={meal.id} />;
         })}
     </>
   );

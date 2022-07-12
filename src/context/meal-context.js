@@ -24,6 +24,7 @@ export const MealContextProvider = ({ children }) => {
 
   useEffect(() => {
     const mealsItem = JSON.parse(localStorage.getItem("meals"));
+    console.log(mealsItem);
     setMeals(mealsItem);
   }, []);
 
