@@ -25,12 +25,6 @@ export const MealContextProvider = ({ children }) => {
     console.log("total is", totalVal);
   }, [meals]);
 
-  useEffect(() => {
-    const mealsItem = JSON.parse(localStorage.getItem("meals"));
-    console.log(mealsItem);
-    setMeals(mealsItem);
-  }, []);
-
   const onDelete = (id) => {
     const afterDelete = meals.filter((meal) => meal.id !== id);
     setMeals(afterDelete);
