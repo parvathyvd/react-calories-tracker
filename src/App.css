@@ -155,3 +155,9 @@ input.success{
 .btn-no{
   background: red;
 }
+
+@media screen and (max-width: 900px) {
+  .modal{
+    width: 90%;
+  }
+}
