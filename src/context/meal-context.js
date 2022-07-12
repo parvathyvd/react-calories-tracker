@@ -6,7 +6,10 @@ import { createContext } from "react";
 const MealContext = createContext();
 
 export const MealContextProvider = ({ children }) => {
-  const [meals, setMeals] = useState([]);
+  const [meals, setMeals] = useState(() => {
+    const mealsItem = JSON.parse(localStorage.getItem("meals"));
+    return mealsItem || [];
+  });
   const [mealName, setMealName] = useState("");
   const [calories, setCalories] = useState(0);
   const [total, setTotal] = useState(0);
